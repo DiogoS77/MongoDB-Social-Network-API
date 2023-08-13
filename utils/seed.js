@@ -2,8 +2,7 @@ const databaseConnection = require("../config/connection");
 const {User, Thought} = require("../models");
 const {
   getRandomFullName,
-  getRandomActivity,
-  getRandomActivityData,
+  getRandomActivities, // Corrected function name
 } = require("./data");
 
 databaseConnection.on("error", (error) => error);
@@ -27,7 +26,7 @@ databaseConnection.once("open", async () => {
   }
 
   const generatedUsers = [];
-  const generatedThoughts = getRandomActivityData(10);
+  const generatedThoughts = getRandomActivities(10); // Corrected function call
 
   for (let i = 0; i < 20; i++) {
     const userName = getRandomFullName();

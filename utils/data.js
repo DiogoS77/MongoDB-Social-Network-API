@@ -144,5 +144,4 @@ function convertTimestampToFormattedString(timestamp) {
 module.exports = {
   getRandomFullName,
   getRandomActivities,
-  convertTimestampToFormattedString,
 };
