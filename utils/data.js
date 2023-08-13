@@ -1,118 +1,126 @@
 const names = [
-  'Aaran',
-  'Aaren',
-  'Aarez',
-  'Aarman',
-  'Aaron',
-  'Aaron-James',
-  'Aarron',
-  'Aaryan',
-  'Aaryn',
-  'Aayan',
-  'Aazaan',
-  'Abaan',
-  'Abbas',
-  'Abdallah',
-  'Abdalroof',
-  'Abdihakim',
-  'Abdirahman',
-  'Abdisalam',
-  'Abdul',
-  'Abdul-Aziz',
-  'Abdulbasir',
-  'Abdulkadir',
-  'Abdulkarem',
-  'Smith',
-  'Jones',
-  'Coollastname',
-  'enter_name_here',
-  'Ze',
-  'Zechariah',
-  'Zeek',
-  'Zeeshan',
-  'Zeid',
-  'Zein',
-  'Zen',
-  'Zendel',
-  'Zenith',
-  'Zennon',
-  'Zeph',
-  'Zerah',
-  'Zhen',
-  'Zhi',
-  'Zhong',
-  'Zhuo',
-  'Zi',
-  'Zidane',
-  'Zijie',
-  'Zinedine',
-  'Zion',
-  'Zishan',
-  'Ziya',
-  'Ziyaan',
-  'Zohaib',
-  'Zohair',
-  'Zoubaeir',
-  'Zubair',
-  'Zubayr',
-  'Zuriel',
-  'Xander',
-  'Jared',
-  'Courtney',
-  'Gillian',
-  'Clark',
-  'Jared',
-  'Grace',
-  'Kelsey',
-  'Tamar',
-  'Alex',
-  'Mark',
-  'Tamar',
-  'Farish',
-  'Sarah',
-  'Nathaniel',
-  'Parker',
+  "Liam",
+  "Emma",
+  "Noah",
+  "Olivia",
+  "Sophia",
+  "Jackson",
+  "Ava",
+  "Aiden",
+  "Isabella",
+  "Lucas",
+  "Mia",
+  "Liam",
+  "Oliver",
+  "Amelia",
+  "Ethan",
+  "Harper",
+  "Daniel",
+  "Evelyn",
+  "Alexander",
+  "Charlotte",
+  "Michael",
+  "Sophia",
+  "William",
+  "Abigail",
+  "James",
+  "Emily",
+  "Elijah",
+  "Elizabeth",
+  "Benjamin",
+  "Sofia",
+  "Logan",
+  "Avery",
+  "Mason",
+  "Ella",
+  "Sebastian",
+  "Scarlett",
+  "Ezra",
+  "Grace",
+  "Henry",
+  "Chloe",
+  "Joseph",
 ];
 
-const appDescriptions = [
-  'Decision Tracker',
-  'Find My Phone',
-  'Learn Piano',
-  'Starbase Defender',
-  'Tower Defense',
-  'Monopoly Money Manager',
-  'Movie trailers',
-  'Hello world',
-  'Stupid Social Media App',
-  'Notes',
-  'Messages',
-  'Email',
-  'Compass',
-  'Firefox',
-  'Running app',
-  'Cooking app',
-  'Poker',
-  'Deliveries',
+const activities = [
+  "Exploring a new hiking trail",
+  "Trying out a new art style",
+  "Attending a thought-provoking lecture",
+  "Rediscovering the joy of board games",
+  "Volunteering at an animal sanctuary",
+  "Reflecting on the beauty of a rainy day",
+  "Finding serenity in meditation",
+  "Enjoying the soothing melodies of jazz music",
+  "Trying a new sport and loving the challenge",
+  "Getting lost in the pages of a fantasy novel",
+  "Experimenting with cooking exotic dishes",
+  "Appreciating architectural wonders",
+  "Planting a garden to nurture nature",
+  "Sharing thoughts on the future of technology",
+  "Chasing waterfalls and embracing adventure",
 ];
 
-// Get a random item given an array
-const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const reactions = [
+  "Bravo!",
+  "Heartfelt",
+  "Amused",
+  "Intrigued",
+  "Touched",
+  "Furious",
+  "This brightened my day!",
+  "So motivating!",
+  "I resonate with this.",
+  "Absolutely hilarious!",
+  "Heartrending.",
+  "Impressive!",
+  "A fresh perspective!",
+  "Appreciate your sharing!",
+  "Keep shining!",
+  "Epic!",
+  "This got me thinking.",
+  "Inspired by your words.",
+  "Thrilling!",
+  "Embracing the now!",
+];
 
-// Gets a random full name
-const getRandomName = () =>
-  `${getRandomArrItem(names)} ${getRandomArrItem(names)}`;
+function getRandomItemFromArray(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
 
-// Function to generate random assignments that we can add to student object.
-const getRandomAssignments = (int) => {
+function getRandomFullName() {
+  const firstName = getRandomItemFromArray(names);
+  const lastName = getRandomItemFromArray(names);
+  return `${firstName} ${lastName}`;
+}
+
+function getRandomActivities(count) {
   const results = [];
-  for (let i = 0; i < int; i++) {
+  for (let i = 0; i < count; i++) {
     results.push({
-      assignmentName: getRandomArrItem(appDescriptions),
-      score: Math.floor(Math.random() * (99 - 70 + 1) + 70),
+      activity: getRandomItemFromArray(activities),
+      reactions: getRandomReactions(),
+      username: getRandomFullName(),
     });
   }
   return results;
-};
+}
 
-// Export the functions for use in seed.js
-module.exports = { getRandomName, getRandomAssignments };
+function getRandomReactions() {
+  const count = Math.floor(Math.random() * 4);
+  if (count === 0) {
+    return [];
+  }
+  const results = [];
+  for (let i = 0; i < count; i++) {
+    results.push({
+      reaction: getRandomItemFromArray(reactions),
+      username: getRandomFullName(),
+    });
+  }
+  return results;
+}
+
+module.exports = {
+  getRandomFullName,
+  getRandomActivities,
+};
