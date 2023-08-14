@@ -18,3 +18,5 @@ function convertTimestampToFormattedString(timestamp) {
 
   return `${formattedDate} at ${formattedTime}`;
 }
+
+module.exports = {convertTimestampToFormattedString};
