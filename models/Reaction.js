@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const dateFormat = require("../utils/date");
+const {convertTimestampToFormattedString} = require("../utils/date");
 
 const {Schema, Types} = mongoose;
 
@@ -21,7 +21,7 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
+      get: (timestamp) => convertTimestampToFormattedString(timestamp),
     },
   },
   {
