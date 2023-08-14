@@ -97,7 +97,7 @@ function getRandomActivities(count) {
   const results = [];
   for (let i = 0; i < count; i++) {
     results.push({
-      activity: getRandomItemFromArray(activities),
+      thoughtText: getRandomItemFromArray(activities),
       reactions: getRandomReactions(),
       username: getRandomFullName(),
     });
