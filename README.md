@@ -24,11 +24,15 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ## Description
 
+This project consists in a MongoDB Social Network API that will give us some details when we request from it. We are able to get information about Users, Thoughts, Friends and Reactions. Also using this API we can update them, creaate and delete them. This project contains 15 JavaScript files .
 
+The biggest challenge for me during this project was the refactoring process, since i used mini project 28 as a base i had to adjust a lot , and at the end i noticed a lot of namings were different from what they were supposed to be. Another challenge was definitly the testing in postman since i still dont work that good with it. 
 
-- 
-- 
-- 
+This challenge helped me a lot because it made my understanding of API higher and also made more confident while working with postman in terms of fetiching the information and organise it so its understandable. There was a few more point in where this challenge helped me that i will be listing bellow.
+
+- Better use of Postman
+- Better API use
+- Higher understanding of JavaScript
 
 ## Table of Contents
 
@@ -48,7 +52,7 @@ npm i
 
 ## Usage
 
-
+To use this repository is pretty simple. You will have to clone the repo , and soon as you clone it and open it, you will need to open your terminal and run the following command (npm i). After installing everything you will need to run this following commands in your terminal (npm run seed) and after run (npm run start). After running this 2 commands you will see your localhost was made and you should be able to get the information on postman after that.
 
 ![End Result](./images/postman18.jpg)
 
@@ -57,21 +61,20 @@ npm i
 I will be listing the tests i have done.
 
 ```
-Tested - 
-Tested - 
-Tested - 
-Tested - 
-Tested - 
-Tested - 
-Tested - 
-Tested - 
-Tested - 
-Tested - 
-Tested - 
-Tested - 
-Tested - 
-Tested - 
-Tested - 
+Tested - Get all Users
+Tested - Get User by ID
+Tested - Create a User
+Tested - Update User
+Tested - Delete User
+Tested - Add Friend
+Tested - Remove Friend
+Tested - Get all Thoughts
+Tested - Get Thought by ID
+Tested - Create Thought
+Tested - Update a Thought
+Tested - Delete Thought
+Tested - Create Reaction
+Tested - Delete Reaction
 ```
 
 ## License
