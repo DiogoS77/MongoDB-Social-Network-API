@@ -46,7 +46,9 @@ const thoughtController = {
 
   async deleteThought(req, res) {
     try {
-      const thought = await Thought.findOneAndRemove(req.params.thoughtId);
+      const thought = await Thought.findOneAndRemove({
+        _id: req.params.thoughtId,
+      });
       if (!thought) {
         return res.status(404).json({message: "No thought with that ID"});
       }
